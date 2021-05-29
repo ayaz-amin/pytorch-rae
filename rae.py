@@ -26,11 +26,6 @@ test_loader = torch.utils.data.DataLoader(
     datasets.MNIST('../data', train=False, transform=transforms.ToTensor()),
     batch_size=BATCH_SIZE, shuffle=True)
 
-def snlinear(in_features, out_features):
-    linear = nn.Linear(in_features, out_features)
-    torch.nn.init.kaiming_normal_ (linear.weight, mode='fan_in', nonlinearity='linear')
-    return linear
-
 class RAE(nn.Module):
     def __init__(self):
         super(RAE, self).__init__()
